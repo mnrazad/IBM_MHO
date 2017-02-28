@@ -8,7 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class loginPageObjects {
 	
 	
-	// Objects first login page
+	// Objects for the login page
 	 By userID=By.xpath(".//*[@id='uname']");
 	 By password=By.xpath(".//*[@id='pw']");
 	 By loginButton=By.xpath(".//*[@id='content']/table/tbody/tr/td[1]/form/table/tbody/tr[6]/td[2]/p/span/input");
