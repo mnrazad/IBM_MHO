@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.Select;
 public class TestClass {
 
 	public static void main(String[] args) {
+		
 		// Test code for the workspace 
 		
 		WebDriver driver=new FirefoxDriver(); 
@@ -54,7 +55,7 @@ public class TestClass {
 		
 		
 		
-		System.out.println("Hello, World");
+		System.out.println("Test is Completed");
 
 	}
 
