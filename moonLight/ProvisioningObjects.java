@@ -88,7 +88,12 @@ public class ProvisioningObjects {
 	 
 	 
 	  // Functions to get objects location of the provisoining page
-	 
+	public WebElement getbackupstorage(){
+		 
+		  WebElement test = tdriver.findElement(BackUpStorage);
+		 return test; 
+		 
+	 }
 	 public WebElement getstartNewClient(){
 		 
 		  WebElement startnewclient = tdriver.findElement(startNewClient);
