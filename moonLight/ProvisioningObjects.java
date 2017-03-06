@@ -36,7 +36,7 @@ public class ProvisioningObjects {
 	 By defaultGateway=By.xpath(".//*[@id='clientDevice.gateway']");
 	 By netMask=By.xpath(".//*[@id='clientDevice.netmask']");
 	 By clientDeviceLocation=By.xpath(".//*[@id='clientDevice.hostlocation']");
-	 
+	 By scheduleid=By.xpath(".//*[@id='clientDevice.scheduleId']");
 	 
 	 
 	 // object after the first stage 
@@ -124,20 +124,70 @@ public class ProvisioningObjects {
 			 return test ; 
 			 
 		 }
-	  
+	  // get ibm contract number
 	  public WebElement getIBMaccount(){
 			 
 		  WebElement test = tdriver.findElement(IBMAccountNumb);
 			 return test ; 
 			 
 		 }
-	  
+	  // get ibm worknumber
 	  public WebElement getIBMworkNumb(){
 			 
 		  WebElement test = tdriver.findElement(IBMWorkNumb);
 			 return test ; 
 			 
 		 }
+	  
+	  public WebElement getIBMcustomernumber(){
+			 
+		  WebElement test = tdriver.findElement(IBMCustomerNumb);
+			 return test ; 
+			 
+		 }
+	  
+	  
+	  // functions for service category, device category, 
+	  
+	  public WebElement getdatacenter(){
+			 
+		  WebElement test = tdriver.findElement(DataCenter);
+			 return test ; 
+			 
+		 }
+	  
+	  public WebElement getserviceplatform(){
+			 
+		  WebElement test = tdriver.findElement(serviceplatform);
+			 return test ; 
+			 
+		 }public WebElement getdevicecategory(){
+			 
+		  WebElement test = tdriver.findElement(DeviceCategory);
+			 return test ; 
+			 
+		 }
+		 
+		 //-----------------------------------------------------------------------------
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
 	  // functions for client device name 
 	  
 	  public WebElement getClientDeviceName(){
@@ -168,6 +218,13 @@ public class ProvisioningObjects {
 	  public WebElement getClientDeviceLocation(){
 			 
 		  WebElement test = tdriver.findElement(clientDeviceLocation);
+			 return test ; 
+			 
+		 }
+	  
+	  public WebElement getscheduleid(){
+			 
+		  WebElement test = tdriver.findElement(scheduleid);
 			 return test ; 
 			 
 		 }

@@ -74,24 +74,47 @@ public class ProvisioningRun {
 		dd1.selectByVisibleText("Tape");
 		Select dd2=new Select(poj.getselectService());
 		dd2.selectByVisibleText("Database");
+		
+		//mdriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Select dd3=new Select(poj.getselectofferting());
-		dd2.selectByVisibleText("Standard");
+		dd3.selectByVisibleText("Remote");
 		
-		
+		mdriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		// client device identification
 		
 		Select dd4=new Select(poj.getsubaccount());
-		dd4.selectByVisibleText("ACT");
+		dd4.selectByVisibleText("Customer001");
+		poj.getIBMaccount().sendKeys("030102");
+		poj.getIBMworkNumb().sendKeys("2524525252");
+		poj.getIBMcustomernumber().sendKeys("52424");
 		
-		/*Select dd4=new Select(poj.getsubaccount());
-		dd4.selectByVisibleText("ACT");
-		Select dd4=new Select(poj.getsubaccount());
-		dd4.selectByVisibleText("ACT");
-		Select dd4=new Select(poj.getsubaccount());
-		dd4.selectByVisibleText("ACT");
-		Select dd4=new Select(poj.getsubaccount());
-		dd4.selectByVisibleText("ACT");*/
 		
+		//mdriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		// data center, device category, service platform
+		Select dd5=new Select(poj.getdatacenter());
+		dd5.selectByVisibleText("Allen");
+		
+		
+		Select dd6=new Select(poj.getserviceplatform());
+		dd6.selectByVisibleText("ATTALL01A");
+		
+		Select dd7=new Select(poj.getdevicecategory());
+		dd7.selectByVisibleText("Physical");
+		
+		
+		//poj.getdevicecategory().click();
+		//mdriver.findElement(By.xpath(".//*[@id='clientDevice.devicecategory']/option[2]")).click();
+		
+		
+		// client device name 
+		
+		poj.getClientDeviceName().sendKeys("Test");
+		poj.getIpAddress().sendKeys("192.168.1.2");
+		poj.getdefaultgateway().sendKeys("134.233.1.1");
+		poj.getnetMask().sendKeys("10.10.10.10");
+		Select dd8=new Select(poj.getClientDeviceLocation());
+		dd8.selectByVisibleText("Inside Data Center");
+		poj.getscheduleid().sendKeys("3");
 		
 		
 		
