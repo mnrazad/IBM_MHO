@@ -191,8 +191,11 @@ public class ProvisioningRun {
 		
 		mdriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
+		String msg = mdriver.findElement(By.xpath(".//*[@id='content']/p[1]")).getText();
+		System.out.println(msg);
+		System.out.println("Provisioning Test Passed");
 		
-		
+		Thread.sleep(3000);
 		
 		mdriver.quit();
 		
