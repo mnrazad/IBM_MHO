@@ -124,11 +124,77 @@ public class ProvisioningRun {
 		
 		dd2.selectByVisibleText("Database");
 		
+		// system informaiton 
+		
+		Select dd9=new Select(poj.getOsVersion());
+		dd9.selectByVisibleText("IBM AIX");
+		
+		
+		Select dd10=new Select(poj.getclientdevicetype());
+		dd10.selectByVisibleText("Web Server");
+		
+		poj.getserverMakeModel().sendKeys("673467364");
+		
+		
+		// 
+		
+		Select dd11=new Select(poj.getotherClient());
+		dd11.selectByVisibleText("Active Cluster");
+		
+		Select dd12=new Select(poj.getVpnprovided());
+		dd12.selectByVisibleText("Customer");
+		
+		// regular file system
+		
+		poj.getrewgularfile().sendKeys("Test");
+		
+		Select dd13=new Select(poj.getEncryuption());
+		dd13.selectByVisibleText("No");
+		
+		// Backup time selection
+		
+		
+		Select bt1=new Select(poj.getbackuptimeselected1());
+		bt1.selectByVisibleText("1 AM");
+		
+		
+		Select bt2=new Select(poj.getbackuptimeselected2());
+		bt2.selectByVisibleText("15");
+		
+		Select bt3=new Select(poj.getbackuptimeselected3());
+		bt3.selectByVisibleText("5 AM");
+		
+		
+		
+		Select bt4=new Select(poj.getbackuptimeselected4());
+		bt4.selectByVisibleText("15");
+		
+		
+		
+		// vaulting option 
+		
+		Select vt=new Select(poj.getValutingOption());
+		vt.selectByVisibleText("No");
+		
+		// database type 
+		
+		Select dbtype=new Select(poj.getdatabaseType());
+		dbtype.selectByVisibleText("IBM DB2");
+		
+		poj.getDatabaseonClient().sendKeys("4");
+		poj.getNumberProcessor().sendKeys("43");
+		poj.getsendform().click();
+		
+		Thread.sleep(4000);
+		poj.getOkButton().click();
+		
+		
+		mdriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		
 		
 		
-		
+		mdriver.quit();
 		
 	}
 	

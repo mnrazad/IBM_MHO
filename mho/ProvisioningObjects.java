@@ -48,7 +48,7 @@ public class ProvisioningObjects {
 	 By ClientDeviceType=By.xpath(".//*[@id='systemInfo.servertype']");
 	 By ServerMakeModel=By.xpath(".//*[@id='systemInfo.servermake']");
 	 By otherClient=By.xpath(".//*[@id='systemInfo.serversetup']");
-	 
+	 By vpnProvided=By.xpath(".//*[@id='systemInfo.vpnProvidedBy']");
 	 
 	 
 	 // Backup Information objects 
@@ -69,7 +69,7 @@ public class ProvisioningObjects {
 	 By NumberProcssor=By.xpath(".//*[@id='database.numOfProcsOnClient']");
 	
 	 // clicking on the Okay button
-	 
+	 By sendformbutton=By.xpath(".//*[@id='submit_button']");
 	 By OkButton=By.xpath(".//*[@id='okButton_label']");
 	 String TestUrl="http://10.12.7.25:8080/index.jsp";
 	
@@ -237,7 +237,7 @@ public class ProvisioningObjects {
 			 return test ; 
 			 
 		 }
-	  public WebElement getdclientdevicetype(){
+	  public WebElement getclientdevicetype(){
 			 
 		  WebElement test = tdriver.findElement(ClientDeviceType);
 			 return test ; 
@@ -252,6 +252,13 @@ public class ProvisioningObjects {
 	  public WebElement getotherClient(){
 			 
 		  WebElement test = tdriver.findElement(otherClient);
+			 return test ; 
+			 
+		 }
+	  
+	  public WebElement getVpnprovided(){
+			 
+		  WebElement test = tdriver.findElement(vpnProvided);
 			 return test ; 
 			 
 		 }
@@ -331,6 +338,17 @@ public class ProvisioningObjects {
 			 return test ; 
 			 
 		 }
+	  
+	  
+	 
+	  public WebElement getsendform(){
+			 
+		  WebElement test = tdriver.findElement(sendformbutton);
+			 return test ; 
+			 
+		 }
+	  
+	  
 	  
 	  
 	  public WebElement getOkButton(){
