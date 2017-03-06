@@ -1,4 +1,4 @@
-package moonLight;
+package mho;
 
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;

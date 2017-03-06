@@ -1,4 +1,4 @@
-package moonLight;
+package mho;
 
 import java.util.concurrent.TimeUnit;
 
@@ -48,7 +48,7 @@ public class ProvisioningRun {
 	}
 	
 	@Test
-	public void bProvisioning(){
+	public void bProvisioning() throws InterruptedException{
 		
 		
 		System.out.println("Starting the Provisioining Test.....");
@@ -72,6 +72,8 @@ public class ProvisioningRun {
 		// indicates a required field
 		Select dd1=new Select(poj.getbackupstorage());
 		dd1.selectByVisibleText("Tape");
+		
+		//Thread.sleep(3000);
 		Select dd2=new Select(poj.getselectService());
 		dd2.selectByVisibleText("Database");
 		
@@ -91,19 +93,21 @@ public class ProvisioningRun {
 		
 		//mdriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		// data center, device category, service platform
-		Select dd5=new Select(poj.getdatacenter());
-		dd5.selectByVisibleText("Allen");
+		//Select dd5=new Select(poj.getdatacenter());
+		//dd5.selectByVisibleText("Allen");
 		
 		
-		Select dd6=new Select(poj.getserviceplatform());
-		dd6.selectByVisibleText("ATTALL01A");
+		//Select dd6=new Select(poj.getserviceplatform());
+		//dd6.selectByVisibleText("ATTALL01A");
 		
 		Select dd7=new Select(poj.getdevicecategory());
 		dd7.selectByVisibleText("Physical");
 		
 		
+		//Select dd7 = new Select(mdriver.findElement(By.cssSelector("select[name='clientDevice.devicecategory']")));
+		//dd7.selectByVisibleText("Physical");
 		//poj.getdevicecategory().click();
-		//mdriver.findElement(By.xpath(".//*[@id='clientDevice.devicecategory']/option[2]")).click();
+		//mdriver.findElement(By.xpath("//tr[./td[contains(text(), 'Physical')]]//select")).click();
 		
 		
 		// client device name 
@@ -115,10 +119,10 @@ public class ProvisioningRun {
 		Select dd8=new Select(poj.getClientDeviceLocation());
 		dd8.selectByVisibleText("Inside Data Center");
 		poj.getscheduleid().sendKeys("3");
+	
 		
 		
-		
-		
+		dd2.selectByVisibleText("Database");
 		
 		
 		
