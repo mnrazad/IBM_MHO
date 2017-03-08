@@ -24,6 +24,7 @@ public class TestClass {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);		
 		
 		driver.navigate().to(TestUrl);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);	
 		driver.findElement(By.xpath(".//*[@id='uname']")).sendKeys(loginid);
 		driver.findElement(By.xpath(".//*[@id='pw']")).sendKeys(loginPass);
 		driver.findElement(By.xpath(".//*[@id='content']/table/tbody/tr/td[1]/form/table/tbody/tr[6]/td[2]/p/span/input")).click();
