@@ -1,14 +1,16 @@
 package mho;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
-public class ProvisioningRun {
+public class provisionAccount_run {
 	
 	WebDriver mdriver = new FirefoxDriver();
 	loginPageObjects lpg=new loginPageObjects(mdriver); 
@@ -47,6 +49,9 @@ public class ProvisioningRun {
 		System.out.println("Ending the Login test.....");
 	}
 	
+	
+	
+	
 	@Test
 	public void bProvisioning() throws InterruptedException{
 		
@@ -70,10 +75,23 @@ public class ProvisioningRun {
 		// starting the main page 
 		
 		// indicates a required field
+		
+		Select dropDown = new Select(poj.getsubaccount());
+		List<WebElement> elementCount = dropDown.getOptions();
+		System.out.println("Number of items: " + elementCount.size());
+
+	
+		
+		
+		for (int x=2;x<5;x++){
+		
+		mdriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Select dd1=new Select(poj.getbackupstorage());
+		poj.getbackupstorage().clear();
 		dd1.selectByVisibleText("Tape");
 		
 		//Thread.sleep(3000);
+		poj.getselectService().clear();
 		Select dd2=new Select(poj.getselectService());
 		//dd2.deselectAll();
 		dd2.selectByValue("CATII");
@@ -81,21 +99,26 @@ public class ProvisioningRun {
 		
 		
 		//mdriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		poj.getselectofferting().clear();
 		Select dd3=new Select(poj.getselectofferting());
 		dd3.selectByVisibleText("Remote");
 		
 		mdriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		// client device identification
-		
+		poj.getsubaccount().clear();
 		Select dd4=new Select(poj.getsubaccount());
 		//dd4.selectByVisibleText("APL LIMITED");
 		//dd4.selectByValue("182821");
-		dd4.selectByIndex(2);
+		dd4.selectByIndex(x);
 		//dd4.selectByValue("182626");
 		
-		
+		poj.getIBMaccount().clear();
 		poj.getIBMaccount().sendKeys("030102");
+		
+		poj.getIBMworkNumb().clear();
 		poj.getIBMworkNumb().sendKeys("2524525252");
+		
+		poj.getIBMcustomernumber().clear();
 		poj.getIBMcustomernumber().sendKeys("52424");
 		
 		
@@ -107,7 +130,7 @@ public class ProvisioningRun {
 		
 		//Select dd6=new Select(poj.getserviceplatform());
 		//dd6.selectByVisibleText("ATTALL01A");
-		
+		poj.getdevicecategory().clear();
 		Select dd7=new Select(poj.getdevicecategory());
 		dd7.selectByVisibleText("Physical");
 		
@@ -224,9 +247,14 @@ public class ProvisioningRun {
 		
 		String msg = mdriver.findElement(By.xpath(".//*[@id='content']/p[1]")).getText();
 		System.out.println(msg);
-		System.out.println("Provisioning Test Passed");
 		
+		mdriver.navigate().back();
+		mdriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+		// code is done
+		}
 		Thread.sleep(3000);
+		System.out.println("Provisioning Test Passed");
 		
 		mdriver.quit();
 		
