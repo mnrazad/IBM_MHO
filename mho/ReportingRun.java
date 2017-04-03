@@ -14,7 +14,7 @@ public class ReportingRun {
 	WebDriver mdriver = new FirefoxDriver();
 	loginPageObjects lpg=new loginPageObjects(mdriver); 
 	String TestUrl="http://10.12.7.25:8080/index.jsp";
-	String loginid="AZAD";
+	String loginid="AzadM";
 	String loginPass="azad1234";
 	String partnerName="IBM US";
 	

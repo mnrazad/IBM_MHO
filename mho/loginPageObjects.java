@@ -34,6 +34,7 @@ public class loginPageObjects {
 		
 		tdriver= driver; 
 		tdriver.navigate().to(TestUrl);
+		tdriver.manage().window().maximize() ;
 		 
 	}
 	 

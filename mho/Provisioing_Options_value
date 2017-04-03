@@ -1,0 +1,27 @@
+
+
+Provisioning options values are listed 
+Input will Number(Integer) 
+
+
+Backup Storage 		1. Tape  2. Disk
+Select a Service 	1. File System 2. Database 3. Database with Archive Logs 
+Select offering  	1. Standard 2. Remote
+
+Directions : to test with Tape, Database, Remote input will 1,2,2 
+
+IN all 12 options will be possible , input combinations are possible as follows 
+
+		Inputs 				1 1 1 
+							1 1 2 
+							1 2 1 
+							1 2 2 
+							1 3 1 
+							1 3 2
+							2 1 1
+							2 1 2
+							2 2 1
+							2 2 2 
+							2 3 1
+							2 3 2 
+
