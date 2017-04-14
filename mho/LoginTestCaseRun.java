@@ -16,6 +16,7 @@ public class LoginTestCaseRun {
 	String loginid="AzadM";
 	String loginPass="azad1234";
 	String partnerName="IBM US";
+	String CustomerName="ACR Homes";
 	
 	
 	@Test
@@ -42,7 +43,12 @@ public class LoginTestCaseRun {
 		mdriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Select dropdown=new Select(lpg.getPartnerLocation());
 		dropdown.selectByVisibleText(partnerName);
+		
+		
 		lpg.getGoButton().click();
+		
+		
+		
 		System.out.println("Login Sucessfull");
 		System.out.println("Ending the Login test.....");
 	}

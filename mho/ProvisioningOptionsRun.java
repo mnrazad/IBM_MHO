@@ -20,6 +20,7 @@ public class ProvisioningOptionsRun {
 	loginPageObjects lpg=new loginPageObjects(mdriver); 
 	String TestUrl="http://10.12.7.25:8080/index.jsp";
 	String loginid="AzadM";
+
 	String loginPass="azad1234";
 	String partnerName="IBM US";
 	int x;
@@ -119,9 +120,12 @@ public class ProvisioningOptionsRun {
 		// client device identification
 		// get subaccount 
 		Select dd4=new Select(poj.getsubaccount());
-		dd4.selectByIndex(2);
+		dd4.selectByIndex(6);
 		
-		// get ibmaccount,worknumber, customernumber
+		// get ibmaccount,worknumber, customernumber1
+		
+		
+		
 		poj.getIBMaccount().sendKeys("030102");
 		poj.getIBMworkNumb().sendKeys("2524525252");
 		poj.getIBMcustomernumber().sendKeys("52424");
@@ -129,7 +133,8 @@ public class ProvisioningOptionsRun {
 		
 		mdriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
-		/* data center and service platform comes automatically
+		/* data center and service platform comes automatically1
+		 
 		data center, device category, service platform
 		Select dd5=new Select(poj.getdatacenter());
 		dd5.selectByVisibleText("Allen");

@@ -19,7 +19,7 @@ public class loginPageObjects {
 	 // Objects for parter and customer selection page 
 	 
 	 By partner=By.xpath(".//*[@id='beSelectId']");
-	 By client=By.xpath(".//*[@id='subAccount']");
+	 By Customer=By.xpath(".//*[@id='subAccount']");
 	 By goButton=By.xpath(".//*[@id='selbeform']/p[2]/input[1]");
 			
 	 
@@ -79,6 +79,17 @@ public class loginPageObjects {
 			 return backToAdmin ; 
 			 
 		 }
+	  
+	  
+	  public WebElement getCustomerLocation(){
+			 
+		  WebElement backToAdmin = tdriver.findElement(By.xpath(".//*[@id='subAccount']"));
+			 return backToAdmin ; 
+			 
+		 }
+	  
+	 
+	  
 	  
 	  public WebElement getGoButton(){
 			 
